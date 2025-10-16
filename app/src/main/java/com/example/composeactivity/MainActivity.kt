@@ -8,7 +8,10 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.DividerDefaults
 import androidx.compose.material3.Scaffold
+// Importa el Divider de Material3
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -44,18 +47,14 @@ fun Activity3_02Screen(modifier: Modifier = Modifier) {
         // Itera sobre la lista de datos
         items(dataList) { item ->
             // Muestra cada elemento de la lista en un Text
-            Text(
-                text = item,
-                modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)
-            )
-            Divider() // Separador visual entre elementos
+            Text(text = item, modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp))
+            HorizontalDivider(
+                Modifier,
+                DividerDefaults.Thickness,
+                DividerDefaults.color
+            ) // Separador visual entre elementos
         }
     }
-}
-
-@Composable
-fun Divider() {
-    TODO("Not yet implemented")
 }
 
 @Preview(showBackground = true)
