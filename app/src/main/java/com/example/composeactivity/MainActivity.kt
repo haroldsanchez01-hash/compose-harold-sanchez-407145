@@ -26,7 +26,7 @@ class MainActivity : ComponentActivity() {
             ComposeActivityTheme {
                 // Llamamos a nuestro componente principal de la actividad 3.01
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Activity3_01Screen(modifier = Modifier.padding(innerPadding))
+                    Modifier.padding(innerPadding).Activity3_01Screen()
                 }
             }
         }
@@ -37,13 +37,12 @@ class MainActivity : ComponentActivity() {
  * Componente principal para la implementación de la Sección 3.01: Contador Básico.
  */
 @Composable
-fun Activity3_01Screen(modifier: Modifier = Modifier) {
+fun Modifier.Activity3_01Screen() {
     // 1. Declaración de Estado: 'count' retendrá el valor y redibujará la UI al cambiar.
     var count by remember { mutableStateOf(0) }
 
     Column(
-        modifier = modifier
-            .fillMaxSize()
+        modifier = fillMaxSize()
             .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
@@ -81,6 +80,6 @@ fun Activity3_01Screen(modifier: Modifier = Modifier) {
 @Composable
 fun Activity3_01Preview() {
     ComposeActivityTheme {
-        Activity3_01Screen()
+        Modifier.Activity3_01Screen()
     }
 }
